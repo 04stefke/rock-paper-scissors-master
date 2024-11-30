@@ -32,6 +32,8 @@ nav {
 	padding-inline: 2rem;
 	border-radius: 1rem;
 	justify-self: start;
+	position: fixed;
+	top: 50px;
 }
 
 .title {
@@ -119,5 +121,5 @@ main {
 	left: -10px;
 	width: 400px;
 	height: 400px;
-    z-index: -10;
+	z-index: -10;
 }
