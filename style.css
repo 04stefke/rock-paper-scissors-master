@@ -1,14 +1,21 @@
 body {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	width: 100%;
-	height: 100%;
+	max-width: 100dvw;
+	min-height: 100dvh;
 	background: linear-gradient(
 		100deg,
 		hsl(214, 47%, 23%) 10%,
 		hsl(237, 49%, 15%) 100%
 	);
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
 }
+
+/* navbar settings */
 
 nav {
 	display: flex;
@@ -24,11 +31,12 @@ nav {
 	border: 1px solid hsl(217, 16%, 45%);
 	padding-inline: 2rem;
 	border-radius: 1rem;
+	justify-self: start;
 }
 
-.title{
-    font-size: 28px;
-    color: hsl(0, 0%, 100%);
+.title {
+	font-size: 28px;
+	color: hsl(0, 0%, 100%);
 }
 .score {
 	background: #fff;
@@ -39,9 +47,77 @@ nav {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    flex-direction: column;
+	flex-direction: column;
 }
 .score-counter {
 	color: hsl(229, 25%, 31%);
 	font-size: 60px;
+}
+
+/* main settings */
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 2rem;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.choices {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+
+.circle {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	background: white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+.circle img {
+	width: 50%;
+	height: 50%;
+}
+
+.paper {
+	top: 0px;
+	left: -100px;
+	border: 20px solid #00f; /* Blue border */
+}
+
+.scissors {
+	top: 0px;
+	right: -100px;
+	border: 20px solid #ffa500; /* Orange border */
+}
+
+.rock {
+	bottom: -100px;
+	left: 50px;
+	border: 20px solid #f00; /* Red border */
+}
+
+.triangle {
+	position: absolute;
+	top: 75px;
+	left: -10px;
+	width: 400px;
+	height: 400px;
+    z-index: -10;
 }
