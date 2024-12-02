@@ -21,26 +21,41 @@ function playGame(playerChoice) {
 	switch (playerChoice) {
 		case "rock":
 			playerChoiceImg.src = "images/icon-rock.svg";
-			houseChoiceImg.src =
-				computerChoice === "scissors"
-					? "images/icon-scissors.svg"
-					: "images/icon-paper.svg";
+			playerDisplay.classList.add("chosenRock"); // Add the 'rock' class to the player's image
+
+			if (computerChoice === "scissors") {
+				houseChoiceImg.src = "images/icon-scissors.svg";
+				computerDisplay.classList.add("chosenScissors"); // Add the 'scissors' class to the house's image
+			} else {
+				houseChoiceImg.src = "images/icon-paper.svg";
+				computerDisplay.classList.add("chosenPaper"); // Add the 'paper' class to the house's image
+			}
 			break;
 
 		case "paper":
 			playerChoiceImg.src = "images/icon-paper.svg";
-			houseChoiceImg.src =
-				computerChoice === "rock"
-					? "images/icon-rock.svg"
-					: "images/icon-scissors.svg";
+			playerDisplay.classList.add("chosenPaper"); // Add the 'paper' class to the player's image
+
+			if (computerChoice === "rock") {
+				houseChoiceImg.src = "images/icon-rock.svg";
+				computerDisplay.classList.add("chosenRock"); // Add the 'rock' class to the house's image
+			} else {
+				houseChoiceImg.src = "images/icon-scissors.svg";
+				computerDisplay.classList.add("chosenScissors"); // Add the 'scissors' class to the house's image
+			}
 			break;
 
 		case "scissors":
 			playerChoiceImg.src = "images/icon-scissors.svg";
-			houseChoiceImg.src =
-				computerChoice === "paper"
-					? "images/icon-paper.svg"
-					: "images/icon-rock.svg";
+			playerDisplay.classList.add("chosenScissors"); // Add the 'scissors' class to the player's image
+
+			if (computerChoice === "paper") {
+				houseChoiceImg.src = "images/icon-paper.svg";
+				computerDisplay.classList.add("chosenPaper"); // Add the 'paper' class to the house's image
+			} else {
+				houseChoiceImg.src = "images/icon-rock.svg";
+				computerDisplay.classList.add("chosenRock"); // Add the 'rock' class to the house's image
+			}
 			break;
 	}
 
@@ -53,10 +68,12 @@ function playGame(playerChoice) {
 		(playerChoice === "scissors" && computerChoice === "paper")
 	) {
 		result = "You win!";
-        score++;
-        updateScore();
+		score++;
+		updateScore();
+		playerDisplay.classList.add("winner");
 	} else {
 		result = "House wins!";
+		computerDisplay.classList.add("winner");
 	}
 
 	// Display the result
@@ -76,6 +93,18 @@ function playAgain() {
 	playerChoses.classList.remove("hidden");
 	playerDisplayWrapper.classList.add("hidden");
 	computerDisplayWrapper.classList.add("hidden");
+	playerDisplay.classList.remove(
+		"chosenRock",
+		"chosenPaper",
+		"chosenScissors",
+		"winner"
+	); 
+	computerDisplay.classList.remove(
+		"chosenRock",
+		"chosenPaper",
+		"chosenScissors",
+		"winner"
+	);
 }
 
 function updateScore() {
