@@ -53,6 +53,8 @@ function playGame(playerChoice) {
 		(playerChoice === "scissors" && computerChoice === "paper")
 	) {
 		result = "You win!";
+        score++;
+        updateScore();
 	} else {
 		result = "House wins!";
 	}
@@ -74,4 +76,8 @@ function playAgain() {
 	playerChoses.classList.remove("hidden");
 	playerDisplayWrapper.classList.add("hidden");
 	computerDisplayWrapper.classList.add("hidden");
+}
+
+function updateScore() {
+	scoreCount.textContent = score;
 }

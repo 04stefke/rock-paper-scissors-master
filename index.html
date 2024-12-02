@@ -23,22 +23,22 @@
 		</nav>
 		<main>
 			<div class="container">
-				<div class="choices " id="playerChoses">
-					<div class="circle paper">
-						<img src="./images/icon-paper.svg" alt="Paper" onclick="playGame('paper')" />
+				<div class="choices" id="playerChoses">
+					<div class="circle paper" onclick="playGame('paper')">
+						<img src="./images/icon-paper.svg" alt="Paper" />
 					</div>
-					<div class="circle scissors">
-						<img src="./images/icon-scissors.svg" alt="Scissors" onclick="playGame('scissors')" />
+					<div class="circle scissors" onclick="playGame('scissors')">
+						<img src="./images/icon-scissors.svg" alt="Scissors" />
 					</div>
-					<div class="circle rock">
-						<img src="./images/icon-rock.svg" alt="Rock" onclick="playGame('rock')" />
+					<div class="circle rock" onclick="playGame('rock')">
+						<img src="./images/icon-rock.svg" alt="Rock" />
 					</div>
 					<div class="triangle">
 						<img src="./images/bg-triangle.svg" alt="triangle" />
 					</div>
 				</div>
 				<div class="choiceResults hidden" id="choiceResults">
-					<div  id="playerChoice">
+					<div id="playerChoice">
 						<h4>You Picked</h4>
 						<div class="pickedCircle winner" id="playerDisplay">
 							<img src="" alt="players choice" id="playerChoiceImg" />
@@ -46,13 +46,15 @@
 					</div>
 					<div class="result hidden" id="result">
 						<h1 id="resultMessage">Lose</h1>
-						<button class="playAgainBtn" onclick="playAgain()">Play Again</button>
+						<button class="playAgainBtn" onclick="playAgain()">
+							Play Again
+						</button>
 					</div>
 					<div id="computerChoice">
 						<h4>The House Picked</h4>
 						<div class="pickedCircleWrapper">
 							<div class="pickedCircle" id="computerDisplay">
-								<img src="" alt="houses choice" id="houseChoiceImg"/>
+								<img src="" alt="houses choice" id="houseChoiceImg" />
 							</div>
 						</div>
 					</div>
