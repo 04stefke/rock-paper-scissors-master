@@ -18,7 +18,7 @@
 		<nav>
 			<div class="nav-container">
 				<h1 class="title">Rock<br />Paper<br />Scissors</h1>
-				<div class="score">Score<span class="score-counter"> 0</span></div>
+				<div class="score">Score<span id="score-counter"> 0</span></div>
 			</div>
 		</nav>
 		<main>
@@ -37,22 +37,22 @@
 						<img src="./images/bg-triangle.svg" alt="triangle" />
 					</div>
 				</div>
-				<div class="choiceResults">
-					<div class="hidden" id="playerChoice">
+				<div class="choiceResults hidden" id="choiceResults">
+					<div  id="playerChoice">
 						<h4>You Picked</h4>
 						<div class="pickedCircle winner" id="playerDisplay">
-							<img src="./images/icon-paper.svg" alt="Paper" />
+							<img src="" alt="players choice" id="playerChoiceImg" />
 						</div>
 					</div>
 					<div class="result hidden" id="result">
 						<h1 id="resultMessage">Lose</h1>
-						<button class="playAgainBtn">Play Again</button>
+						<button class="playAgainBtn" onclick="playAgain()">Play Again</button>
 					</div>
-					<div  class="hidden" id="computerChoice">
+					<div id="computerChoice">
 						<h4>The House Picked</h4>
 						<div class="pickedCircleWrapper">
 							<div class="pickedCircle" id="computerDisplay">
-								<img src="./images/icon-paper.svg" alt="Paper" />
+								<img src="" alt="houses choice" id="houseChoiceImg"/>
 							</div>
 						</div>
 					</div>

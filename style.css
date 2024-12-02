@@ -51,7 +51,7 @@ nav {
 	align-items: center;
 	flex-direction: column;
 }
-.score-counter {
+#score-counter {
 	color: hsl(229, 25%, 31%);
 	font-size: 60px;
 }
