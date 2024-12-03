@@ -27,8 +27,8 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 40rem;
-	border: 1px solid hsl(217, 16%, 45%);
+	width: 40%;
+	border: 5px solid hsl(217, 16%, 45%);
 	padding-inline: 2rem;
 	border-radius: 1rem;
 	justify-self: start;
@@ -37,13 +37,13 @@ nav {
 }
 
 .title {
-	font-size: 28px;
+	font-size: clamp(18px, 2vw, 28px);
 	color: hsl(0, 0%, 100%);
 }
 .score {
 	background: #fff;
-	padding-inline: 1rem;
-	padding-block: 0.5rem;
+	padding-inline: 7%;
+	padding-block: 2%;
 	border-radius: 0.8rem;
 	color: hsl(229, 64%, 46%);
 	display: flex;
@@ -51,9 +51,9 @@ nav {
 	align-items: center;
 	flex-direction: column;
 }
-.score-counter {
+#score-counter {
 	color: hsl(229, 25%, 31%);
-	font-size: 60px;
+	font-size: clamp(30px, 4vw, 64px);
 }
 
 /* main settings */
@@ -158,6 +158,8 @@ main {
 	align-items: center;
 	color: white;
 	width: 70%;
+	flex-wrap: wrap;
+	flex-direction: row;
 }
 
 #playerChoice,
@@ -178,6 +180,10 @@ main {
 	cursor: pointer;
 }
 
+.result {
+	order: 0;
+}
+
 .playAgainBtn:hover {
 	color: red;
 }
@@ -188,4 +194,27 @@ main {
 
 .hidden {
 	display: none;
+}
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 800px) {
+	.chosenPaper,
+	.chosenRock,
+	.chosenScissors {
+		border-width: 20px;
+	}
+
+	.choiceResults {
+		flex-wrap: nowrap;
+		flex-direction: column;
+	}
+
+	.pickedCircle {
+		width: 150px;
+		height: 150px;
+	}
+	.result {
+		order: 2;
+	}
 }
